@@ -1,6 +1,6 @@
 $(function () {
     var imgURL = chrome.extension.getURL("images/twitter_m.png");
-    var imageTag = '<img src="' + imgURL + '" width="200" class="animated bounce">';
+    var imageTag = '<img src="' + imgURL + '" width="200" class="animated bounce test-animation">';
 
     $("body").append("<div class='popSNSBlock'><div class='popSNSBlock-in'></div></div>");
     $(".popSNSBlock-in").append("<p>このサイトを利用するのかよく考えたまえよ。<br>" + imageTag + "</p>");
