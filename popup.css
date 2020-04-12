@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.popSNSBlock {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    top: 0;
+    position: fixed;
+    display: table;
+    /* overflow: hidden; */
+}
+
+.popSNSBlock-in {
+    width: 80%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    vertical-align: middle;
+    position: absolute;
+    /* overflow: hidden; */
+}
+
+.popSNSBlock-in p {
+    color: #fff;
+}
+
+#countdown {
+    color: #fff;
+    font-size: 300%;
+}
+
+.test-animation {
+    /* 指定秒かけてアニメーションする */
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    /* 指定秒待ってからアニメーションする */
+    /* -webkit-animation-duration: 4s;
+    animation-delay: 4s; */
+    /* 指定回繰り返す */
+    -webkit-animation-iteration-count: 3;
+    animation-iteration-count: 3;
+}

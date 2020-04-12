@@ -1,0 +1,21 @@
+{
+  "name": "SNS blocker",
+  "description": "平和な世界へ",
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "permissions": [
+    "tabs",
+    "declarativeContent"
+  ],
+  "icons": {
+    "128": "images/128x128.png"
+  },
+  "web_accessible_resources": [
+    "images/*"
+  ],
+  "content_scripts": [{
+    "matches": ["https://twitter.com/", "https://www.facebook.com/"],
+    "js": ["jquery-3.5.0.min.js", "popup.js"],
+    "css": ["popup.css", "animate.css"]
+  }]
+}
