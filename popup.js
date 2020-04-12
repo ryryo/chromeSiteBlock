@@ -22,6 +22,8 @@ $(function () {
 });
 
 $(document).on("click", ".popSNSBlockClose", function () {
-    $(".popSNSBlock").remove();
+    $(".popSNSBlock").fadeOut('fast').queue(function () {
+        this.remove();
+    });
     return false;
 });
