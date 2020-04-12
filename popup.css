@@ -34,6 +34,7 @@
 #countdown {
     color: #fff;
     font-size: 300%;
+    line-height: 1.5;
 }
 
 .test-animation {
@@ -44,6 +45,31 @@
     /* -webkit-animation-duration: 4s;
     animation-delay: 4s; */
     /* 指定回繰り返す */
-    -webkit-animation-iteration-count: 3;
-    animation-iteration-count: 3;
+    -webkit-animation-iteration-count: 5;
+    animation-iteration-count: 5;
+}
+
+.btn-square {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    font-size: 120%;
+}
+
+a.btn-square,
+a.btn-square:active,
+a.btn-square:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.btn-square:active,
+.btn-square:hover {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;
 }

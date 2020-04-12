@@ -5,6 +5,7 @@ $(function () {
     $("body").append("<div class='popSNSBlock'><div class='popSNSBlock-in'></div></div>");
     $(".popSNSBlock-in").append("<p>このサイトを利用するのかよく考えたまえよ。<br>" + imageTag + "</p>");
     $(".popSNSBlock-in").append("<div id='countdown'></div>");
+    $(".popSNSBlock-in").append("<div class='closebuttonArea'></div>");
 
     cnt = 10;
     $('#countdown').text(cnt);
@@ -12,8 +13,15 @@ $(function () {
         cnt--;
         if (cnt <= 0) { //0になったら停止する
             clearInterval(cnDown);
-            $(".popSNSBlock").remove();
+
+            // $(".popSNSBlock").remove();
+            $('.closebuttonArea').append('<a href="#" class="popSNSBlockClose btn-square">見ちゃう</a>');
         }
         $('#countdown').text(cnt);
     }, 1000);
+});
+
+$(document).on("click", ".popSNSBlockClose", function () {
+    $(".popSNSBlock").remove();
+    return false;
 });
