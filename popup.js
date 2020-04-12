@@ -8,7 +8,7 @@ $(function () {
 
     cnt = 10;
     $('#countdown').text(cnt);
-    cnDown = setInterval(function () { //1秒おきにカウントマイナス
+    cnDown = setInterval(function () {
         cnt--;
         if (cnt <= 0) { //0になったら停止する
             clearInterval(cnDown);
