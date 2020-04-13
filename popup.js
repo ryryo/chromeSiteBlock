@@ -2,46 +2,36 @@ $(function () {
     /*
      * カウントダウンタイマー
      */
-    const host = location.host;
-    const pathname = location.pathname;
+    var imgURL = chrome.extension.getURL("images/twitter_m.png");
+    var imageTag =
+        '<img src="' +
+        imgURL +
+        '" width="200" class="animated bounce test-animation">';
 
-    var popupFlag = true;
-    if (host == "twitter.com" && pathname != "/home") {
-        popupFlag = false;
-    }
+    $("body").append(
+        "<div class='popSNSBlock'><div class='popSNSBlock-in'></div></div>"
+    );
+    $(".popSNSBlock-in").append(
+        "<p>このサイトを利用するのかよく考えたまえよ。<br>" + imageTag + "</p>"
+    );
+    $(".popSNSBlock-in").append("<div id='countdown'></div>");
+    $(".popSNSBlock-in").append("<div class='closebuttonArea'></div>");
 
-    if (popupFlag) {
-        var imgURL = chrome.extension.getURL("images/twitter_m.png");
-        var imageTag =
-            '<img src="' +
-            imgURL +
-            '" width="200" class="animated bounce test-animation">';
+    cnt = 10;
+    $("#countdown").text(cnt);
+    cnDown = setInterval(function () {
+        cnt--;
+        if (cnt <= 0) {
+            //0になったら停止する
+            clearInterval(cnDown)
 
-        $("body").append(
-            "<div class='popSNSBlock'><div class='popSNSBlock-in'></div></div>"
-        );
-        $(".popSNSBlock-in").append(
-            "<p>このサイトを利用するのかよく考えたまえよ。<br>" + imageTag + "</p>"
-        );
-        $(".popSNSBlock-in").append("<div id='countdown'></div>");
-        $(".popSNSBlock-in").append("<div class='closebuttonArea'></div>");
-
-        cnt = 1;
+            // $(".popSNSBlock").remove();
+            $(".closebuttonArea").append(
+                '<a href="#" class="popSNSBlockClose btn-square">見ちゃう</a>'
+            );
+        }
         $("#countdown").text(cnt);
-        cnDown = setInterval(function () {
-            cnt--;
-            if (cnt <= 0) {
-                //0になったら停止する
-                clearInterval(cnDown)
-
-                // $(".popSNSBlock").remove();
-                $(".closebuttonArea").append(
-                    '<a href="#" class="popSNSBlockClose btn-square">見ちゃう</a>'
-                );
-            }
-            $("#countdown").text(cnt);
-        }, 1000);
-    }
+    }, 1000);
 });
 
 $(document).on("click", ".popSNSBlockClose", function () {
@@ -75,7 +65,7 @@ if (host == "twitter.com") {
 //
 window.addEventListener("load", removeUselessArea, false);
 
-function removeUselessArea(ehost, pathname) {
+function removeUselessArea(host, pathname) {
     const jsInitCheckTimer = setInterval(jsLoaded, 1000);
 
     function jsLoaded() {

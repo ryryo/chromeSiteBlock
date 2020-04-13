@@ -8,6 +8,7 @@
     "declarativeContent"
   ],
   "icons": {
+    "16": "images/16x16.png",
     "128": "images/128x128.png"
   },
   "web_accessible_resources": [
