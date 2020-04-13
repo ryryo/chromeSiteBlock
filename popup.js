@@ -71,7 +71,8 @@ function removeUselessArea(host, pathname) {
     function jsLoaded() {
         if (host == "twitter.com") {
 
-            if (document.querySelector('[aria-label="タイムライン: トレンド"]') != null) {
+
+            if (document.querySelector('[aria-label="タイムライン: トレンド"]') != null && '[aria-label="おすすめユーザー"]' != null) {
                 clearInterval(jsInitCheckTimer);
 
                 $('[aria-label="調べたいものを検索"]').remove();
