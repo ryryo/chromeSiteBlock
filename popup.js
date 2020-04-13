@@ -6,7 +6,8 @@ $(function () {
     const pathname = location.pathname;
 
     var countdownFlag = true;
-    if ((host == "twitter.com" && pathname != "") && (host == "twitter.com" && pathname != "/home")) {
+
+    if ((host == "twitter.com" && pathname != "/") && (host == "twitter.com" && pathname != "/home")) {
         countdownFlag = false;
     }
 
