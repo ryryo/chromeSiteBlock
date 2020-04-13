@@ -14,7 +14,7 @@
     "images/*"
   ],
   "content_scripts": [{
-    "matches": ["https://twitter.com/", "https://www.facebook.com/", "https://tweetdeck.twitter.com/"],
+    "matches": ["https://*.twitter.com/*", "https://www.facebook.com/"],
     "js": ["jquery-3.5.0.min.js", "popup.js"],
     "css": ["popup.css", "animate.css"]
   }]
