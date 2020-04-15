@@ -22,7 +22,7 @@ $(function () {
             "<div class='popSNSBlock'><div class='popSNSBlock-in'></div></div>"
         );
         $(".popSNSBlock-in").append(
-            "<p>このサイトを利用するのかよく考えたまえよ。<br>" + imageTag + "</p>"
+            "<p>このサイトを利用するのかよく考えたまえよ。<br />そしてコップ一杯の水を飲みたまえよ。<br />" + imageTag + "<br />願わくば私に、変えることのできない物事を受け入れる落ち着きと、変えることのできる物事を変える勇気と、その違いを常に見分ける知恵とを授けたまえ。</p>"
         );
         $(".popSNSBlock-in").append("<div id='countdown'></div>");
         $(".popSNSBlock-in").append("<div class='closebuttonArea'></div>");
@@ -91,6 +91,9 @@ function removeUselessArea(host, pathname) {
                 $('[aria-label="おすすめユーザー"]').remove();
                 $('[aria-label="フッター"]').parent().remove();
             };
+
+            //広告削除
+            $("span:contains('プロモーション')").closest("article").parent().remove();
         }
     }
 }
